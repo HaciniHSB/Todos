@@ -3,17 +3,16 @@
     <h1>{{ msg }}</h1>
     <div class="row justify-content-center align-items-center">
       <div class="col-6">
-        <AddTodo v-on:postTodo="getTodos()" />
+        <AddTodo />
       </div>
     </div>
 
     <div class="row justify-content-center align-items-center">
       <div class="col-5">
         <ul>
-        <Todo v-for="todo in todos" :key="todo.id" v-bind:todo="todo" v-on:deleteTodo="getTodos()" />
-      </ul>
+          <Todo v-for="todo in alltodos" :key="todo.id" v-bind:todo="todo" />
+        </ul>
       </div>
-      
     </div>
   </div>
 </template>
@@ -25,35 +24,33 @@ export default {
   name: "HelloWorld",
   data: function() {
     return {
-      todos: null
+      todos: null,
     };
   },
   props: {
-    msg: String
+    msg: String,
   },
   components: {
     AddTodo,
-    Todo
+    Todo,
   },
   methods: {
     getTodos: function() {
-      this.$api
-        .get("/todo/todos")
-        .then(response => {
-          this.todos = response.data;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-        
-    }
+      this.$store.commit("getAllTodos");
+    },
   },
+
+  computed: {
+    alltodos: function() {
+      return this.$store.state.todos;
+    },
+  },
+
   beforeMount: function() {
     this.getTodos();
-  }
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped></style>

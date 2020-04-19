@@ -8,10 +8,17 @@
       aria-describedby="button-addon2"
       text="lol"
       v-model="todoName"
-       @keydown.enter = "postTodo"
+      @keydown.enter="postTodo"
     />
     <div class="input-group-append">
-      <button class="btn btn-primary" type="button" id="button-addon2" v-on:click="postTodo" >Add</button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        id="button-addon2"
+        v-on:click="postTodo"
+      >
+        Add
+      </button>
     </div>
   </div>
 </template>
@@ -22,7 +29,7 @@ export default {
   data: function() {
     return {
       todoName: null,
-      processing: false
+      processing: false,
     };
   },
   methods: {
@@ -30,11 +37,11 @@ export default {
       if (this.todoName !== null) {
         this.$api
           .post("/todo/todo", {
-            Name: this.todoName
+            Name: this.todoName,
           })
-          .then(response => {
+          .then((response) => {
             console.log(response);
-            this.$emit('postTodo')
+            this.$store.commit("getAllTodos");
           })
           .catch(function(error) {
             console.log(error);
@@ -42,9 +49,8 @@ export default {
           .finally(() => console.log("OK"));
 
         this.todoName = null;
-       
       }
-    }
-  }
+    },
+  },
 };
 </script>

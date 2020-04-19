@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="WebApi_With_EntityFramworkCore_Exemple/Migrations/20200331122912_init.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApi_With_EntityFramworkCore_Exemple/Controllers/TodoController.cs">
     <Files>
-      <File FileName="WebApi_With_EntityFramworkCore_Exemple/Controllers/HomeController.cs" Line="1" Column="1" />
-      <File FileName="WebApi_With_EntityFramworkCore_Exemple/Controllers/TodoController.cs" />
-      <File FileName="WebApi_With_EntityFramworkCore_Exemple/Migrations/20200331122912_init.cs" Line="1" Column="1" />
+      <File FileName="WebApi_With_EntityFramworkCore_Exemple/appsettings.json" Line="10" Column="38" />
+      <File FileName="WebApi_With_EntityFramworkCore_Exemple/Controllers/TodoController.cs" Line="26" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="WebApi_With_EntityFramworkCore_Exemple" expanded="True">
             <Node name="WebApi_With_EntityFramworkCore_Exemple" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="Migrations" expanded="True">
-                <Node name="20200331122912_init.cs" selected="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="TodoController.cs" selected="True" />
               </Node>
+              <Node name="Migrations" expanded="True" />
+              <Node name="MoldelsRepository" expanded="True" />
             </Node>
           </Node>
         </State>

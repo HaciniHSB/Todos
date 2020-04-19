@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Todo's Manager"/>
-    
+    <HelloWorld msg="Todo's Manager" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/Home.vue'
-
+import HelloWorld from "./components/Home.vue";
+import store from "./modules/Store";
 export default {
-  name: 'App',
+  name: "App",
+  store,
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
 
 <style>

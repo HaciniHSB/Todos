@@ -1,12 +1,24 @@
 <template>
   <div v-bind:class="todoStyle" v-on:click="ValidateTodo" role="alert">
     <div id="left">
-      <h6>{{todo.name}}</h6>
+      <h6>{{ todo.name }}</h6>
     </div>
     <div id="rigth">
-      <span class="badge badge-pill badge-success floatrigth" v-if="todo.state===1">Done</span>
-      <span class="badge badge-pill badge-warning floatrigth" v-if="todo.state===0">Waiting</span>
-      <font-awesome-icon id="delete" icon="trash-alt" v-on:click="DeleteTtoto" />
+      <span
+        class="badge badge-pill badge-success floatrigth"
+        v-if="todo.state === 1"
+        >Done</span
+      >
+      <span
+        class="badge badge-pill badge-warning floatrigth"
+        v-if="todo.state === 0"
+        >Waiting</span
+      >
+      <font-awesome-icon
+        id="delete"
+        icon="trash-alt"
+        v-on:click="DeleteTtoto"
+      />
     </div>
     <div style="clear: both"></div>
   </div>
@@ -16,7 +28,7 @@
 export default {
   name: "Todo",
   props: {
-    todo: Object
+    todo: Object,
   },
   methods: {
     ValidateTodo: function() {
@@ -30,26 +42,26 @@ export default {
         });
     },
 
-       DeleteTtoto: function() {
-       this.$api
-        .delete("/todo/DeleteTodo/"+this.todo.id)
+    DeleteTtoto: function() {
+      this.$api
+        .delete("/todo/DeleteTodo/" + this.todo.id)
         .then(() => {
-          this.$emit('deleteTodo')
+          this.$store.commit("getAllTodos");
         })
         .catch(function(error) {
           console.log(error);
         });
-    }
+    },
   },
 
   computed: {
     todoStyle: function() {
       return {
         "alert alert-success": this.todo.state === 1,
-        "alert alert-warning": this.todo.state === 0
+        "alert alert-warning": this.todo.state === 0,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
