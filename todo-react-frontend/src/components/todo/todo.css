@@ -1,0 +1,12 @@
+#Todo #left, #Todo #rigth {
+  display: inline-block;
+  height: 100%;
+}
+#Todo #rigth {
+  float: right;
+}
+#Todo #delete {
+  color: #495057;
+  margin-left: 30px;
+  padding-top: 1px;
+}

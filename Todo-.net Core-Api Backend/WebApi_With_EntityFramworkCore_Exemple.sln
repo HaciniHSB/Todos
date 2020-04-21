@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29920.165
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi_With_EntityFramworkCore_Exemple", "WebApi_With_EntityFramworkCore_Exemple\WebApi_With_EntityFramworkCore_Exemple.csproj", "{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Staging|Any CPU = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Production|Any CPU.ActiveCfg = Production|Any CPU
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Production|Any CPU.Build.0 = Production|Any CPU
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
+		{D6A4BAD8-6E48-42B8-A4FB-78E67FAE2985}.Staging|Any CPU.Build.0 = Staging|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1DA0FCBA-56D6-4522-9696-8822E439F303}
+	EndGlobalSection
+EndGlobal
