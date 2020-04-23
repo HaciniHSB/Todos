@@ -1,7 +1,11 @@
 import React from "react";
-//import {PostTodo} from '../repositories/TodoRepository'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { addTodo } from "../store/Actions";
 
-export default class AddTodo extends React.Component {
+
+
+ class AddTodo extends React.Component {
   constructor(props) {
     super();
     this.state = {
@@ -9,6 +13,15 @@ export default class AddTodo extends React.Component {
         Name: "",
       },
     };
+  }
+
+  add=()=>{
+    if(this.props.addTodo(this.state.todo)){
+      this.setState({
+        todo : Object.assign({},this.state.todo,{Name : ""})
+      })
+    }
+
   }
 
   render() {
@@ -26,7 +39,7 @@ export default class AddTodo extends React.Component {
           }}
         />
         <div className="input-group-append">
-          <button className="btn btn-primary" type="button" id="button-addon2">
+          <button className="btn btn-primary" type="button" id="button-addon2" onClick={this.add}>
             Add
           </button>
         </div>
@@ -34,3 +47,8 @@ export default class AddTodo extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  ...bindActionCreators({addTodo }, dispatch),
+});
+export default connect(null, mapDispatchToProps) (AddTodo);

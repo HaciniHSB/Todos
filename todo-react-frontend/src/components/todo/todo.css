@@ -5,8 +5,12 @@
 #Todo #rigth {
   float: right;
 }
-#Todo #delete {
+#Todo .delete {
   color: #495057;
   margin-left: 30px;
   padding-top: 1px;
+}
+
+#cb{
+  clear: both
 }
